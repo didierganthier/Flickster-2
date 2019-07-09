@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.flickster.R;
 import com.example.flickster.models.Movie;
 
@@ -72,7 +73,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             {
              imageUrl = movie.getBackdropPath();
             }
-            Glide.with(context).load(imageUrl).into(ivPoster);
+            Glide.with(context).load(imageUrl).apply(new RequestOptions().placeholder(R.drawable.popcorn)).into(ivPoster);
         }
     }
 }
