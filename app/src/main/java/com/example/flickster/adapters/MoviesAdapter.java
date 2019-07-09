@@ -73,6 +73,9 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             {
              imageUrl = movie.getBackdropPath();
             }
+            if(movie.getVoteAverage() > 5.0){
+                imageUrl = movie.getBackdropPath();
+            }
             Glide.with(context).load(imageUrl).apply(new RequestOptions().placeholder(R.drawable.popcorn)).into(ivPoster);
         }
     }
