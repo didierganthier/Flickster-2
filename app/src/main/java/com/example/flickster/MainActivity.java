@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.flickster.adapters.MoviesAdapter;
 import com.example.flickster.models.Movie;
@@ -46,7 +47,6 @@ public class MainActivity extends AppCompatActivity
                     JSONArray jsonArray = response.getJSONArray("results");
                     movies.addAll(Movie.fromjsonArray(jsonArray));
                     adapter.notifyDataSetChanged();
-                    Log.d("hello",movies.toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 super.onFailure(statusCode, headers, responseString, throwable);
+                Toast.makeText(MainActivity.this, "Failure", Toast.LENGTH_SHORT).show();
             }
         });
     }

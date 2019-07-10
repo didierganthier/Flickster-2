@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -55,6 +57,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
         TextView tvTitle, tvOverview;
         ImageView ivPoster;
+        RatingBar ratingBar;
 
         public ViewHolder(@NonNull View itemView)
         {
@@ -62,12 +65,17 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            ratingBar = itemView.findViewById(R.id.ratingBar);
         }
 
         public void bind(Movie movie)
         {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
+            double rate = movie.getVoteAverage();
+            float rating = (float)rate;
+            rating = rating/2;
+            ratingBar.setRating(rating);
             String imageUrl = movie.getPosterPath();
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
             {
