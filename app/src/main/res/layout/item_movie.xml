@@ -53,21 +53,21 @@
 
     <LinearLayout
         android:id="@+id/linear"
-        android:layout_below="@id/tvOverview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvOverview"
         android:orientation="horizontal">
 
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linear"
             android:layout_marginStart="92dp"
             android:layout_marginTop="21dp"
             android:layout_marginEnd="79dp"
             android:isIndicator="true"
             android:numStars="5"
-            android:stepSize="1"
             android:visibility="visible" />
     </LinearLayout>
 
