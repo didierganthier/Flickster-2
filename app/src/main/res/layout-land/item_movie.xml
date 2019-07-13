@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/black">
@@ -41,25 +42,6 @@
         android:textColor="@android:color/white"
         android:textSize="14sp"
         tools:text="Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to agree to help Nick Fury uncover the mystery of creatures that cause natural disasters and destruction throughout the continent." />
-
-    <LinearLayout
-        android:id="@+id/linear"
-        android:layout_below="@id/ivPoster"
-        android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:orientation="horizontal">
-
-
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:numStars="5"
-            android:layout_marginBottom="10dp" />
-    </LinearLayout>
 
 </RelativeLayout>
 
